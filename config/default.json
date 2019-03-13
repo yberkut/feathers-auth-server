@@ -1,0 +1,61 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "tests": {
+    "environmentsAllowingSeedData": [
+      ""
+    ]
+  },
+  "authentication": {
+    "secret": "107310203435792c134070595940a3e5f50e9f44a9cc8b8f318a0d99b3e215d9b6fb4a2b1509e8e958439297ff748518271897ace993fd970c0a80546874fb9ea7f44f0f8c00f969da1af134f5f0439a0d8aad144b6dcd83d27bbc3ed66dee29d22acb5503c83400e383d922ef8a64c1b2b39a8f383dec8253143a9ec48d2a8365c7a44e556857669d6dc6640637cccbcf213542ecd259a5e3b4b23a8af052e8f628442d16b0922c7848d726b72155b73e2c67f710b99e2131bcbdf6dd151cd52c11f8b00ee12b96f5104fca0f2e0dd80da73bc1b9125cd22efc6a80be07ecc935c5adb8897c5075fd8c66bcaaefa9717fc038aeb5f1c67a50c8fd19504b32e8",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "iberkut-api",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "cookie": {
+      "enabled": true,
+      "name": "feathers-jwt",
+      "httpOnly": false,
+      "secure": false
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    },
+    "google": {
+      "clientID": "your google client id",
+      "clientSecret": "your google client secret",
+      "successRedirect": "/",
+      "scope": [
+        "profile openid email"
+      ]
+    },
+    "github": {
+      "clientID": "e0fb9a1e851bbe445e18",
+      "clientSecret": "93361db16c72b15ef689ab6a1035a67b1e59285e",
+      "successRedirect": "http://localhost:8080",
+      "scope": [
+        "read:user"
+      ]
+    }
+  },
+  "nedb": "../data"
+}
